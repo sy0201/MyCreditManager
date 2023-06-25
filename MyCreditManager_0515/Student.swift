@@ -10,5 +10,5 @@ import Foundation
 struct Student {
     var name: String?
     var subject: String?
-    var grade: [String:Score]?
+    var grade: Double?
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		18F1E9922A1205BA004B0F70 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1E9912A1205BA004B0F70 /* main.swift */; };
 		18F1E9992A120685004B0F70 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1E9982A120685004B0F70 /* Student.swift */; };
-		18F1E99B2A1206BE004B0F70 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1E99A2A1206BE004B0F70 /* Score.swift */; };
 		18F1E99D2A120C20004B0F70 /* MenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1E99C2A120C20004B0F70 /* MenuType.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 		18F1E98E2A1205BA004B0F70 /* MyCreditManager_0515 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MyCreditManager_0515; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F1E9912A1205BA004B0F70 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		18F1E9982A120685004B0F70 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		18F1E99A2A1206BE004B0F70 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		18F1E99C2A120C20004B0F70 /* MenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				18F1E9982A120685004B0F70 /* Student.swift */,
-				18F1E99A2A1206BE004B0F70 /* Score.swift */,
 				18F1E9912A1205BA004B0F70 /* main.swift */,
 				18F1E99C2A120C20004B0F70 /* MenuType.swift */,
 			);
@@ -131,7 +128,6 @@
 			files = (
 				18F1E99D2A120C20004B0F70 /* MenuType.swift in Sources */,
 				18F1E9922A1205BA004B0F70 /* main.swift in Sources */,
-				18F1E99B2A1206BE004B0F70 /* Score.swift in Sources */,
 				18F1E9992A120685004B0F70 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

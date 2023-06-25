@@ -8,17 +8,7 @@
 import Foundation
 
 var studentList = [Student]()
-let gradeValue: [String:Float] = [
-    "A+" : 4.5,
-    "A"  : 4,
-    "B+" : 3.5,
-    "B"  : 3,
-    "C+" : 2.5,
-    "C"  : 2,
-    "D+" : 1.5,
-    "D"  : 1,
-    "F"  : 0
-]
+
 
 func creditManager() {
     print("원하는 기능을 입력해주세요.")
@@ -49,6 +39,9 @@ func creditManager() {
     case MenuType.average.code:
         print("평점을 알고싶은 학생의 이름을 입력해주세요.")
         average()
+    case MenuType.end.code:
+        print("프로그램을 종료합니다...")
+        end()
     default:
         print("뭔가 입력이 잘못되었습니다. 1~5 사이의 숫자 혹은 X를 입력해 주세요.")
         creditManager()
@@ -89,8 +82,7 @@ func removeStudent() {
     
     if hasStudent.count == 0 {
         print("\(name)학생을 찾지 못했습니다.")
-        
-    } else if hasStudent.count > 0 {
+    } else {
         // 입력된 name 있으니 배열에서 삭제
         studentList[0].name
         print("\(String(describing: studentList[0].name))학생을 삭제하였습니다.")
@@ -120,12 +112,36 @@ func addGrade() {
     print(splitedInputText)
     print(inputText)
     
-    let name = splitedInputText[0]
-    let subject = splitedInputText[1]
-    let grade = splitedInputText[2]
+    let name = String(splitedInputText[0])
+    let subject = String(splitedInputText[1])
+    let grade = String(splitedInputText[2])
+    
+    switch grade {
+    case "A+":
+        print(4.5)
+    case "A":
+        print(4)
+    case "B+":
+        print(3.5)
+    case "B":
+       print(3)
+    case "C+":
+        print(2.5)
+    case "C":
+        print(2)
+    case "D+":
+        print(1.5)
+    case "D":
+        print(1)
+    case "F":
+        print(0)
+    default:
+        break
+    }
     print(name, subject, grade)
     
-    
+    // 입력된 학생성적 배열에 추가
+    var setStudent = Student(name: String(name), subject: String(subject), grade: Double(grade))
     print("\(name)학생의 \(subject)과목이 \(grade)로 변경되었습니다")
     
     creditManager()
@@ -139,18 +155,15 @@ func deleteGrade() {
         return
     }
     
-    var splitedInputText = inputText.split(separator: " ")
+    let splitedInputText = inputText.split(separator: " ")
     
     if splitedInputText.count != 2 {
         print("입력이 잘못되었습니다.다시 확인해주세요")
     }
-    
-    var student = Student()
-    
-    // 이름을 기준으로 이름과 과목을 찾아서 성적을 지워준다.
+        
+    // 이름을 기준으로 이름과 과목을 찾아서 성적 삭제
     let name = splitedInputText[0]
     let subject = splitedInputText[1]
-    let grade = ""
 
     print(splitedInputText)
     print("\(name)학생의 \(subject)과목의 성적이 삭제되었습니다.")
@@ -160,23 +173,27 @@ func deleteGrade() {
 
 // 5. 평점보기
 func average() {
-    let inputText = readLine()
+    let name = readLine()
+
+    guard let name = name,!name.isEmpty else { return }
     
-    guard let inputText = inputText,!inputText.isEmpty else { return }
-    
+    if studentList.contains(where: { $0.name == name} ) {
+        // 이름을 기준으로 subject와 grade 출력
+        
+        print("==>>")
+    }
     
     //이름 검색 후 없으면
-    //print("\(name)학생을 찾을 수 없습니다.")
+    print("\(name)학생을 찾을 수 없습니다.")
+    creditManager()
 }
 
-
-func factorial(_ num: Int) -> Int {
-    var result = 1
-    for n in 2...num {
-        result *= n
+// 6. 종료
+func end() {
+    let inputText = readLine()
+    
+    if inputText == "X" || inputText == "x" {
+        print("프로그램을 종료합니다...")
+        return
     }
-    return result
 }
-
-print(factorial(3))
-print(factorial(5))
