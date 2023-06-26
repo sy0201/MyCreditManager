@@ -9,6 +9,10 @@ import Foundation
 
 struct Student {
     var name: String?
+    var score: [Score]
+}
+
+struct Score {
     var subject: String?
     var grade: Double?
 }

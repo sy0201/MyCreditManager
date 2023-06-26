@@ -28,7 +28,7 @@ enum MenuType {
         case .average:
             return "5"
         case .end:
-            return "x"
+            return "X"
         }
     }
 }
